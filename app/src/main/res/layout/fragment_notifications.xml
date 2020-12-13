@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:orientation="vertical"
+    tools:context=".ui.notifications.NotificationsFragment" >
+
+	<!-- A CardView that contains a TextView -->
+	<androidx.cardview.widget.CardView
+		xmlns:card_view="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/card_view"
+		android:layout_gravity="center"
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+		card_view:cardCornerRadius="20dp"
+		>
+
+		<TextView
+			android:id="@+id/info_text"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:text="Do not forget to drink water"
+			android:gravity="center"
+			android:textAppearance="@style/TextAppearance.AppCompat.Large"
+			/>
+
+		<TextView
+			android:id="@+id/close1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:gravity="right"
+			android:text="CLOSE"
+			android:padding="10dp"
+			android:textColor="@color/colorAccent"
+			/>
+
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:gravity="start"
+			android:text="3.12.2020 18:00"
+			android:padding="10dp" />
+	</androidx.cardview.widget.CardView>
+
+	<!-- A CardView that contains a TextView -->
+	<androidx.cardview.widget.CardView
+		xmlns:card_view="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/card_view1"
+		android:layout_gravity="center"
+		android:layout_width="match_parent"
+		android:layout_height="100dp"
+		card_view:cardCornerRadius="20dp"
+		android:layout_marginTop="10dp">
+
+		<TextView
+			android:id="@+id/info_text1"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:text="Time to start your scheduled workout"
+			android:gravity="center"
+			android:textAppearance="@style/TextAppearance.AppCompat.Large"
+			/>
+
+		<TextView
+			android:id="@+id/close2"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:gravity="right"
+			android:text="CLOSE"
+			android:padding="10dp"
+			android:textColor="@color/colorAccent"/>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:gravity="left"
+			android:text="3.12.2020 12:23"
+			android:padding="10dp" />
+
+	</androidx.cardview.widget.CardView>
+</LinearLayout>

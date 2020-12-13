@@ -1,0 +1,16 @@
+<resources>
+	<string name="app_name">ProjectCalories</string>
+	<string name="title_home">Home</string>
+	<string name="title_profile">Profile</string>
+	<string name="title_notifications">Notifications</string>
+    <string name="weight">Enter your weight</string>
+	<string name="height">Enter your height</string>
+	<string name="income">Income</string>
+	<string name="drinking_regime">Drinking regime</string>
+	<string name="summary">Summary</string>
+	<string name="lose_weight">Lose weight</string>
+	<string name="gain_muscles">Gain muscles</string>
+	<string name="stay_fit">Stay fit</string>
+	<string name="save">Save</string>
+	<string name="choose_your_goal">Choose your goal</string>
+</resources>

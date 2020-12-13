@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:orientation="vertical" >
+
+
+	<RadioButton
+		android:id="@+id/radio_goal_lose"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/lose_weight" />
+
+	<RadioButton
+		android:id="@+id/radio_goal_gain"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/gain_muscles" />
+
+	<RadioButton
+		android:id="@+id/radio_goal_stay"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/stay_fit" />
+
+</LinearLayout>
