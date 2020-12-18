@@ -12,14 +12,34 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_profile"
         android:name="sk.itsovy.android.dolinsky.projectcalories.ui.profile.ProfileFragment"
-        android:label="title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile">
+		<action
+			android:id="@+id/actionGetHeight"
+			app:destination="@id/heightFragment" />
+
+		<action
+			android:id="@+id/actionGetWeight"
+			app:destination="@id/weightFragment" />
+	</fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="sk.itsovy.android.dolinsky.projectcalories.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+	<fragment
+		android:id="@+id/heightFragment"
+		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.profile.HeightDialogFragment"
+		android:label="Height"
+		tools:layout="@layout/height_dialog_view" />
+
+	<fragment
+		android:id="@+id/weightFragment"
+		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.profile.WeightDialogFragment"
+		android:label="Weight"
+		tools:layout="@layout/weight_dialog_view" />
 </navigation>

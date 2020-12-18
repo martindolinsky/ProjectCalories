@@ -11,8 +11,11 @@ public class User {
 	@ColumnInfo(name = "id")
 	private int id;
 
-	@ColumnInfo(name = "text")
-	private String text;
+	@ColumnInfo(name = "height")
+	private int height;
+
+	@ColumnInfo(name = "weight")
+	private int weight;
 
 	public User() {
 	}
@@ -25,16 +28,24 @@ public class User {
 		this.id = id;
 	}
 
-	public String getText() {
-		return text;
+	public int getHeight() {
+		return height;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
 	}
 
 	@Override
 	public String toString() {
-		return text;
+		return height + "";
 	}
 }

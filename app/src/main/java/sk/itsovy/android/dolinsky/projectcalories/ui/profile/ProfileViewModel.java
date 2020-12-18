@@ -1,19 +1,13 @@
 package sk.itsovy.android.dolinsky.projectcalories.ui.profile;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
+import sk.itsovy.android.dolinsky.projectcalories.api.UserRepository;
 
 public class ProfileViewModel extends ViewModel {
+	private UserRepository repo = UserRepository.getInstance();
 
-    private MutableLiveData<String> mText;
-
-    public ProfileViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
-    }
-
-    public LiveData<String> getText() {
-        return mText;
-    }
+	public LiveData<Integer> height = Transformations.map(repo.userData, input -> input.getHeight());
+	public LiveData<Integer> weight = Transformations.map(repo.userData, input -> input.getWeight());
 }

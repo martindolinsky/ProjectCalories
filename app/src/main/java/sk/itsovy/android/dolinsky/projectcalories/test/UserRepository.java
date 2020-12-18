@@ -27,7 +27,6 @@ public class UserRepository {
 				() -> {
 					userDao.insert(user);
 				}
-
 		);
 	}
 }

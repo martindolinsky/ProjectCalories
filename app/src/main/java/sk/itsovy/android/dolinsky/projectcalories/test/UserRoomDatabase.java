@@ -54,11 +54,11 @@ public abstract class UserRoomDatabase extends RoomDatabase {
 				//If not here, it creates that number of dbs how many threads exists
 				dao.deleteAll();
 				User u1 = new User();
-				u1.setText("Test");
+				u1.setHeight(180);
 				dao.insert(u1);
 
 				User u2 = new User();
-				u1.setText("Test 2");
+				u1.setHeight(200);
 				dao.insert(u2);
 
 

@@ -20,7 +20,7 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
 	}
 
 	public void bind(User user) {
-		editTextHeight.setText(user.getText());
+		editTextHeight.setText(user.getHeight());
 //		textView.setText(user.getText());
 	}
 }
