@@ -6,10 +6,20 @@
     app:startDestination="@+id/navigation_home">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="sk.itsovy.android.dolinsky.projectcalories.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+		android:id="@+id/navigation_home"
+		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.home.HomeFragment"
+		android:label="@string/title_home"
+		tools:layout="@layout/fragment_home">
+
+		<action
+			android:id="@+id/actionGetFood"
+			app:destination="@id/foodFragment" />
+
+		<action
+			android:id="@+id/actionGetDrink"
+			app:destination="@id/drinkFragment" />
+
+	</fragment>
 
     <fragment
         android:id="@+id/navigation_profile"
@@ -23,6 +33,8 @@
 		<action
 			android:id="@+id/actionGetWeight"
 			app:destination="@id/weightFragment" />
+
+
 	</fragment>
 
     <fragment
@@ -42,4 +54,29 @@
 		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.profile.WeightDialogFragment"
 		android:label="Weight"
 		tools:layout="@layout/weight_dialog_view" />
+
+	<fragment
+		android:id="@+id/foodFragment"
+		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.food.FoodFragment"
+		android:label="Food"
+		tools:layout="@layout/food_fragment">
+
+		<action
+			android:id="@+id/actionGetMeals"
+			app:destination="@id/mealsFragment" />
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/drinkFragment"
+		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.drink.DrinkFragment"
+		android:label="Drink"
+		tools:layout="@layout/drink_fragment" />
+
+	<fragment
+		android:id="@+id/mealsFragment"
+		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.meals.MealsFragment"
+		android:label="Meals"
+		tools:layout="@layout/meals_fragment" />
+
 </navigation>

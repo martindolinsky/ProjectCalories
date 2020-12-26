@@ -6,7 +6,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.NumberPicker;
 
 import androidx.annotation.NonNull;
@@ -41,4 +40,11 @@ public class HeightDialogFragment extends Fragment {
 		return view;
 	}
 
+	@Override
+	public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+		if (item.getItemId() == android.R.id.undo) {
+			getActivity().finish();
+		}
+		return super.onOptionsItemSelected(item);
+	}
 }

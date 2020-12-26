@@ -2,7 +2,6 @@ package sk.itsovy.android.dolinsky.projectcalories.ui.profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -22,13 +21,11 @@ public class ProfileFragment extends Fragment {
 
 	private static final String TAG = "ProfileFragment";
 
-    private UserViewHolder viewHolder;
-    private ProfileViewModel profileViewModel;
-	private EditText editWeight;
+	private UserViewHolder viewHolder;
+	private ProfileViewModel profileViewModel;
+	private TextInputEditText editWeight;
 	private EditText editGoal;
-	public EditText editHeight;
-	private TextInputEditText editText;
-
+	private TextInputEditText editHeight;
 
 
 	@Override
@@ -42,43 +39,41 @@ public class ProfileFragment extends Fragment {
 
 		View root = inflater.inflate(R.layout.fragment_profile, container, false);
 
-		editHeight = root.findViewById(R.id.textHeight);
 		editWeight = root.findViewById(R.id.textWeight);
-		editText = root.findViewById(R.id.textHeight1);
+		editHeight = root.findViewById(R.id.textHeight);
 
+		showHeightFragment();
+
+		profileViewModel.weight.observe(getViewLifecycleOwner(), integer -> {
+			editWeight.setText(String.valueOf(integer));
+
+		});
+
+		showWeightFragment();
+		profileViewModel.height.observe(getViewLifecycleOwner(), integer -> {
+			editHeight.setText(String.valueOf(integer));
+		});
+
+
+		return root;
+	}
+
+	private void showWeightFragment() {
+		editWeight.setOnClickListener(v -> {
+			NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+			NavController navController = navHostFragment.getNavController();
+			navController.navigate(R.id.actionGetWeight);
+		});
+	}
+
+	private void showHeightFragment() {
 		editHeight.setOnClickListener(v -> {
 			NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
 			NavController navController = navHostFragment.getNavController();
 			navController.navigate(R.id.actionGetHeight);
 		});
 
-		profileViewModel.height.observe(getViewLifecycleOwner(), integer -> {
-			editHeight.setText("Your height is: " + integer);
-		});
-
-
-		editWeight.setOnClickListener(v -> {
-			NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-			NavController navController = navHostFragment.getNavController();
-			navController.navigate(R.id.actionGetWeight);
-		});
-
-		profileViewModel.weight.observe(getViewLifecycleOwner(), integer -> {
-			editWeight.setText("Your weight is: " + integer);
-		});
-
-
-
-		editText.setOnClickListener(v -> {
-			NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-			NavController navController = navHostFragment.getNavController();
-			navController.navigate(R.id.actionGetHeight);
-		});
-
-		profileViewModel.height.observe(getViewLifecycleOwner(), integer -> {
-			editText.setHint(integer);
-		});
-
-		return root;
 	}
+
+
 }

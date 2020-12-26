@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".ui.food.FoodFragment">
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btnBreakfast"
+		style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/breakfast"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btnBrunch"
+		style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/brunch"
+		app:layout_constraintTop_toBottomOf="@+id/btnBreakfast" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btnElevenses"
+		style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/elevenses"
+		app:layout_constraintTop_toBottomOf="@+id/btnBrunch" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btnLunch"
+		style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/lunch"
+		app:layout_constraintTop_toBottomOf="@+id/btnElevenses" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btnSupper"
+		style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/supper"
+		app:layout_constraintTop_toBottomOf="@+id/btnLunch" />
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btnDinner"
+		style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/dinner"
+		app:layout_constraintTop_toBottomOf="@+id/btnSupper" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,59 +4,65 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".ui.profile.ProfileFragment" >
-
-	<EditText
-		android:id="@+id/textHeight"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="8dp"
-		android:layout_marginTop="56dp"
-		android:layout_marginEnd="8dp"
-		android:textAlignment="center"
-		app:layout_constraintTop_toTopOf="parent"
-		android:textSize="20sp"
-		android:hint="@string/height"
-		android:focusableInTouchMode="true"
-		android:cursorVisible="false"
-		android:focusable="false" />
-
-	<EditText
-		android:id="@+id/textWeight"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="8dp"
-		android:layout_marginTop="56dp"
-		android:layout_marginEnd="8dp"
-		android:textAlignment="center"
-		app:layout_constraintTop_toBottomOf="@id/textHeight"
-		android:textSize="20sp"
-		android:hint="@string/weight"
-		android:focusableInTouchMode="true"
-		android:cursorVisible="false"
-		android:focusable="false" />
+	tools:context=".ui.profile.ProfileFragment">
 
 	<com.google.android.material.textfield.TextInputLayout
-		app:layout_constraintTop_toBottomOf="@id/textWeight"
 		android:id="@+id/textField"
-		android:layout_marginTop="56dp"
+		app:layout_constraintTop_toTopOf="parent"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		app:startIconDrawable="@drawable/ic_launcher_foreground"
-		app:startIconContentDescription="Label" >
-
+		app:startIconContentDescription="Label"
+		app:startIconDrawable="@drawable/ic_launcher_foreground">
 
 		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/textHeight"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:id="@+id/textHeight1"
-			android:focusableInTouchMode="true"
 			android:cursorVisible="false"
 			android:focusable="false"
-			android:textSize="20sp"
+			android:focusableInTouchMode="true"
 			android:hint="@string/height"
+			android:textSize="18sp"
+
 
 			/>
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/textField1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="20dp"
+		app:layout_constraintTop_toBottomOf="@id/textField"
+		app:startIconContentDescription="Label"
+		app:startIconDrawable="@drawable/ic_launcher_foreground">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/textWeight"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:cursorVisible="false"
+			android:focusable="false"
+			android:focusableInTouchMode="true"
+			android:hint="@string/weight"
+			android:textSize="18sp"
+
+			/>
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/textField2"
+		style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintTop_toBottomOf="@id/textField1">
+
+		<AutoCompleteTextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:inputType="none" />
 
 	</com.google.android.material.textfield.TextInputLayout>
 

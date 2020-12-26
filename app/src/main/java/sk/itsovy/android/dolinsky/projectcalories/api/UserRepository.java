@@ -1,6 +1,7 @@
 package sk.itsovy.android.dolinsky.projectcalories.api;
 
 import androidx.lifecycle.MutableLiveData;
+import sk.itsovy.android.dolinsky.projectcalories.test.UserDao;
 
 public class UserRepository {
 	static UserRepository INSTANCE = null;
@@ -12,6 +13,7 @@ public class UserRepository {
 
 
 	public MutableLiveData<User> userData = new MutableLiveData();
+	private UserDao userDao;
 
 	public void setUserHeight(int height) {
 		User user = this.userData.getValue();
