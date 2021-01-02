@@ -4,6 +4,7 @@ public class User {
 	private String name;
 	private int height;
 	private int weight;
+	private String goal;
 
 	public User(String name, int height, int weight) {
 		this.name = name;
@@ -37,6 +38,14 @@ public class User {
 
 	public void setWeight(int weight) {
 		this.weight = weight;
+	}
+
+	public String getGoal() {
+		return goal;
+	}
+
+	public void setGoal(String goal) {
+		this.goal = goal;
 	}
 }
 

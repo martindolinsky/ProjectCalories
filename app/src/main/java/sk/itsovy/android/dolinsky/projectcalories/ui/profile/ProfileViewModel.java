@@ -10,4 +10,5 @@ public class ProfileViewModel extends ViewModel {
 
 	public LiveData<Integer> height = Transformations.map(repo.userData, input -> input.getHeight());
 	public LiveData<Integer> weight = Transformations.map(repo.userData, input -> input.getWeight());
+	public LiveData<String> goal = Transformations.map(repo.userData, input -> input.getGoal());
 }

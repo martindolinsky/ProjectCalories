@@ -6,7 +6,8 @@
 	android:layout_height="match_parent"
 	tools:context=".ui.food.FoodFragment">
 
-	<com.google.android.material.button.MaterialButton
+
+<com.google.android.material.button.MaterialButton
 		android:id="@+id/btnBreakfast"
 		style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
 		android:layout_width="match_parent"

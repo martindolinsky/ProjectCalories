@@ -31,5 +31,13 @@ public class UserRepository {
 		this.userData.setValue(user);
 	}
 
+	public void setUserGoal(String goal) {
+		User user = this.userData.getValue();
+		if (user == null)
+			user = new User();
+		user.setGoal(goal);
+		this.userData.setValue(user);
+	}
+
 
 }

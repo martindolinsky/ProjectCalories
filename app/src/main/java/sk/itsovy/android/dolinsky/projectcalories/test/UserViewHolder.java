@@ -16,7 +16,6 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
 	public UserViewHolder(@NonNull View itemView) {
 		super(itemView);
 		editTextHeight = itemView.findViewById(R.id.textHeight);
-		textView = itemView.findViewById(R.id.textView);
 	}
 
 	public void bind(User user) {
