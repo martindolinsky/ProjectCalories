@@ -19,4 +19,5 @@
 	<string name="lunch">Lunch</string>
 	<string name="supper">Supper</string>
 	<string name="dinner">Dinner</string>
+    <string name="drinkTitle">drinkTitle</string>
 </resources>

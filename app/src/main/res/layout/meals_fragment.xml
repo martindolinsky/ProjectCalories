@@ -1,13 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	tools:context=".ui.meals.MealsFragment">
 
-	<TextView
+	<com.google.android.material.card.MaterialCardView
+		android:id="@+id/card_view1"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:text="Hello Meals" />
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:clickable="true"
+		android:focusable="true"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="16dp"
+			android:paddingBottom="8dp">
+
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_weight="1.0"
+				android:orientation="horizontal">
+
+				<TextView
+					style="?attr/textAppearanceHeadline6"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Rice" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btnAmount"
+					style="?attr/borderlessButtonStyle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="50dp"
+					android:text="choose amount" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</com.google.android.material.card.MaterialCardView>
+
+
+	<com.google.android.material.card.MaterialCardView
+		android:id="@+id/card_view2"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:clickable="true"
+		android:focusable="true"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/card_view1">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="16dp"
+			android:paddingBottom="8dp">
+
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_weight="1.0"
+				android:orientation="horizontal">
+
+				<TextView
+					style="?attr/textAppearanceHeadline6"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Beef steak" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btnAddFood"
+					style="?attr/borderlessButtonStyle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="50dp"
+					android:text="choose amount" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</com.google.android.material.card.MaterialCardView>
+
+
+	<com.google.android.material.card.MaterialCardView
+		android:id="@+id/card_view3"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:clickable="true"
+		android:focusable="true"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/card_view2">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="16dp"
+			android:paddingBottom="8dp">
+
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_weight="1.0"
+				android:orientation="horizontal">
+
+				<TextView
+					style="?attr/textAppearanceHeadline6"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Chicken leg" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btnAmount1"
+					style="?attr/borderlessButtonStyle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="50dp"
+					android:text="choose amount" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</com.google.android.material.card.MaterialCardView>
+
+	<com.google.android.material.card.MaterialCardView
+		android:id="@+id/card_view4"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:clickable="true"
+		android:focusable="true"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/card_view3">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="16dp"
+			android:paddingBottom="8dp">
+
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_weight="1.0"
+				android:orientation="horizontal">
+
+				<TextView
+					style="?attr/textAppearanceHeadline6"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Apple" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btnAmount2"
+					style="?attr/borderlessButtonStyle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="50dp"
+					android:text="choose amount" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</com.google.android.material.card.MaterialCardView>
+
+	<com.google.android.material.card.MaterialCardView
+		android:id="@+id/card_view5"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="8dp"
+		android:clickable="true"
+		android:focusable="true"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/card_view4">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="16dp"
+			android:paddingBottom="8dp">
+
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_weight="1.0"
+				android:orientation="horizontal">
+
+				<TextView
+					style="?attr/textAppearanceHeadline6"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Pasta" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btnAmount3"
+					style="?attr/borderlessButtonStyle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="50dp"
+					android:text="choose amount" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

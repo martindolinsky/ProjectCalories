@@ -15,15 +15,15 @@ public interface UserDao {
 	@Insert(onConflict = OnConflictStrategy.IGNORE)
 	void insert(User user);
 
-	@Query("SELECT * FROM user")
+	@Query("SELECT * FROM users")
 	LiveData<List<User>> getAllUsers();
 
-	@Query("SELECT * FROM user WHERE id = :id")
+	@Query("SELECT * FROM users WHERE id = :id")
 	LiveData<User> getById(int id);
 
 	@Delete
 	void deleteProfile(User user);
 
-	@Query("DELETE FROM user")
+	@Query("DELETE FROM users")
 	void deleteAll();
 }

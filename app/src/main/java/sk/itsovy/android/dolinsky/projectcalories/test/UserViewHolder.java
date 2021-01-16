@@ -1,25 +1,21 @@
 package sk.itsovy.android.dolinsky.projectcalories.test;
 
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import sk.itsovy.android.dolinsky.projectcalories.R;
 
 public class UserViewHolder extends RecyclerView.ViewHolder {
 
-	private EditText editTextHeight;
-	private TextView textView;
+//	private TextView textViewDrink;
 
 	public UserViewHolder(@NonNull View itemView) {
 		super(itemView);
-		editTextHeight = itemView.findViewById(R.id.textHeight);
+//		textViewDrink = itemView.findViewById(R.id.textViewDrinkTitle);
 	}
 
 	public void bind(User user) {
-		editTextHeight.setText(user.getHeight());
-//		textView.setText(user.getText());
+//		textViewDrink.setText(user.getHeight() + "");
+//		Log.d("uSER",user.getHeight() + "");
 	}
 }

@@ -1,12 +1,12 @@
 package sk.itsovy.android.dolinsky.projectcalories.ui.profile;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -29,10 +29,9 @@ public class ProfileFragment extends Fragment {
 	private UserViewHolder viewHolder;
 	private ProfileViewModel profileViewModel;
 	private TextInputEditText editWeight;
-	private EditText editGoal;
 	private TextInputEditText editHeight;
 	private TextInputLayout inputLayoutGoals;
-	private AutoCompleteTextView textViewGoals;
+	private AutoCompleteTextView autoCompleteTextViewGoals;
 	private ArrayList<String> goals;
 	private ArrayAdapter<String> arrayAdapter;
 
@@ -51,16 +50,16 @@ public class ProfileFragment extends Fragment {
 		editWeight = root.findViewById(R.id.textWeight);
 		editHeight = root.findViewById(R.id.textHeight);
 		inputLayoutGoals = root.findViewById(R.id.textFieldGoals);
-		textViewGoals = root.findViewById(R.id.textViewGoals);
+		autoCompleteTextViewGoals = root.findViewById(R.id.textViewGoals);
 
 		goals = new ArrayList<>();
 		goals.add("Lose weight");
 		goals.add("Gain muscles");
 		goals.add("Stay fit");
 
-		arrayAdapter = new ArrayAdapter<>(requireContext(), R.layout.item_layout, goals);
-		textViewGoals.setAdapter(arrayAdapter);
-		textViewGoals.setThreshold(1);
+		arrayAdapter = new ArrayAdapter<>(requireContext(), R.layout.dropdown_menu_item_layout, goals);
+		autoCompleteTextViewGoals.setAdapter(arrayAdapter);
+		autoCompleteTextViewGoals.setThreshold(1);
 
 		showHeightFragment();
 
@@ -74,11 +73,13 @@ public class ProfileFragment extends Fragment {
 			editHeight.setText(String.valueOf(integer));
 		});
 
-		//TODO: Fix this setting the value
+		//TODO: Fix setting the value
+		profileViewModel.setGoal(autoCompleteTextViewGoals.getText().toString());
 		profileViewModel.goal.observe(getViewLifecycleOwner(), string -> {
-			textViewGoals.setText(string);
+			string = autoCompleteTextViewGoals.getText().toString();
+			Log.d("GOAL", "msg " + string);
+			autoCompleteTextViewGoals.setText(string, false);
 		});
-
 
 		return root;
 	}
@@ -97,8 +98,6 @@ public class ProfileFragment extends Fragment {
 			NavController navController = navHostFragment.getNavController();
 			navController.navigate(R.id.actionGetHeight);
 		});
-
 	}
-
 
 }
