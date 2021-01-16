@@ -34,7 +34,6 @@
 			android:id="@+id/actionGetWeight"
 			app:destination="@id/weightFragment" />
 
-
 	</fragment>
 
     <fragment
@@ -77,6 +76,18 @@
 		android:id="@+id/mealsFragment"
 		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.meals.MealsFragment"
 		android:label="Meals"
-		tools:layout="@layout/meals_fragment" />
+		tools:layout="@layout/meals_fragment">
+
+		<action
+			android:id="@+id/actionGetAmount"
+			app:destination="@id/amountFragment" />
+
+	</fragment>
+
+	<fragment
+		android:id="@+id/amountFragment"
+		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.amount.AmountFragment"
+		android:label="Amount"
+		tools:layout="@layout/amount_fragment" />
 
 </navigation>

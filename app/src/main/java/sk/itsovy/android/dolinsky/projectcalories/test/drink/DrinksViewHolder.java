@@ -20,7 +20,6 @@ public class DrinksViewHolder extends RecyclerView.ViewHolder {
 	public void bind(Drink drink) {
 		textViewDrink.setText(drink.getTitle());
 		Log.d("DRINK", drink.getId() + " "
-//				TODO: FIX DATABASE
 				+ drink.getTitle() + " " + drink.getProteins() + "");
 	}
 }

@@ -1,11 +1,11 @@
-package sk.itsovy.android.dolinsky.projectcalories.test.drink;
+package sk.itsovy.android.dolinsky.projectcalories.test.meal;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "drinks")
-public class Drink {
+@Entity(tableName = "meals")
+public class Meal {
 
 	@PrimaryKey(autoGenerate = true)
 	@ColumnInfo(name = "id")
@@ -26,7 +26,7 @@ public class Drink {
 	@ColumnInfo(name = "energy")
 	private int energy;
 
-	public Drink() {
+	public Meal() {
 	}
 
 	public int getId() {

@@ -15,7 +15,7 @@ public interface DrinkDao {
 	@Insert(onConflict = OnConflictStrategy.IGNORE)
 	void insert(Drink drink);
 
-	@Query("SELECT * FROM drinks")
+	@Query("SELECT * FROM drinks ORDER BY title")
 	LiveData<List<Drink>> getAllDrinks();
 
 	@Query("SELECT * FROM drinks WHERE id = :id")

@@ -25,8 +25,8 @@ public class WeightDialogFragment extends Fragment {
 		NumberPicker picker = view.findViewById(R.id.pickerWeight);
 		Button submit = view.findViewById(R.id.submitWeight);
 
-		picker.setMaxValue(300);
-		picker.setMinValue(100);
+		picker.setMaxValue(150);
+		picker.setMinValue(20);
 		picker.setWrapSelectorWheel(true);
 
 		weightViewModel = new ViewModelProvider(this).get(WeightDialogVM.class);
