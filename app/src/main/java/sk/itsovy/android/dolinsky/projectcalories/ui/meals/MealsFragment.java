@@ -42,7 +42,6 @@ public class MealsFragment extends Fragment {
 
 		View root = inflater.inflate(R.layout.meals_fragment, container, false);
 
-
 		View viewItem = inflater.inflate(R.layout.item_meal_layout, container, false);
 		cardViewMeal = viewItem.findViewById(R.id.card_view_meal);
 		btnAmount = viewItem.findViewById(R.id.btnAmount);
@@ -56,17 +55,11 @@ public class MealsFragment extends Fragment {
 		MealViewModel mealViewModel = provider.get(MealViewModel.class);
 
 		cardViewMeal.setOnClickListener(v -> {
-			NavHostFragment navHostFragment = (NavHostFragment) getActivity()
-					.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-			NavController navController = navHostFragment.getNavController();
-			navController.navigate(R.id.actionGetAmount);
+			showAmountFragment();
 		});
 
 		btnAmount.setOnClickListener(v -> {
-			NavHostFragment navHostFragment = (NavHostFragment) getActivity()
-					.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-			NavController navController = navHostFragment.getNavController();
-			navController.navigate(R.id.actionGetAmount);
+			showAmountFragment();
 		});
 
 		mealViewModel.getAllMeals().observe(getViewLifecycleOwner(), new Observer<List<Meal>>() {

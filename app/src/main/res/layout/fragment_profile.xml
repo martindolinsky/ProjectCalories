@@ -23,8 +23,6 @@
 			android:focusableInTouchMode="true"
 			android:hint="@string/height"
 			android:textSize="18sp"
-
-
 			/>
 
 	</com.google.android.material.textfield.TextInputLayout>

@@ -143,6 +143,7 @@ public abstract class UserRoomDatabase extends RoomDatabase {
 				m8.setProteins(240);
 				mealDao.insert(m8);
 
+
 			});
 		}
 	};

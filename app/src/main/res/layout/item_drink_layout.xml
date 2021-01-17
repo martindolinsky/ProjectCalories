@@ -20,7 +20,7 @@
 			android:padding="16dp"
 			android:paddingBottom="8dp">
 
-			<LinearLayout
+			<androidx.constraintlayout.widget.ConstraintLayout
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="8dp"
@@ -32,16 +32,22 @@
 					style="?attr/textAppearanceHeadline6"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="@string/drinkTitle" />
+					android:text="@string/drinkTitle"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
 
 				<com.google.android.material.button.MaterialButton
 					android:id="@+id/btnAmount"
 					style="?attr/borderlessButtonStyle"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_marginStart="50dp"
-					android:text="choose amount" />
-			</LinearLayout>
+					android:layout_marginStart="@dimen/activity_horizontal_margin"
+					android:text="choose amount"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+			</androidx.constraintlayout.widget.ConstraintLayout>
 
 		</LinearLayout>
 
