@@ -2,7 +2,6 @@ package sk.itsovy.android.dolinsky.projectcalories.ui.profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -13,15 +12,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import sk.itsovy.android.dolinsky.projectcalories.R;
+import sk.itsovy.android.dolinsky.projectcalories.test.user.UserViewModel;
 
 public class HeightDialogFragment extends Fragment {
 
-	private HeightDialogVM heightViewModel;
+	private UserViewModel userViewModel;
 
 	@Nullable
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.height_dialog_view,null, false);
+		View view = inflater.inflate(R.layout.height_dialog_view, null, false);
 
 		NumberPicker picker = view.findViewById(R.id.pickerHeight);
 		Button submit = view.findViewById(R.id.submitHeight);
@@ -30,21 +30,14 @@ public class HeightDialogFragment extends Fragment {
 		picker.setMinValue(100);
 		picker.setWrapSelectorWheel(true);
 
-		heightViewModel = new ViewModelProvider(this).get(HeightDialogVM.class);
+		userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
 		submit.setOnClickListener(v -> {
-			heightViewModel.setHeight(picker.getValue());
+			userViewModel.setHeight(picker.getValue());
 			getActivity().onBackPressed();
 		});
 
 		return view;
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-		if (item.getItemId() == android.R.id.undo) {
-			getActivity().finish();
-		}
-		return super.onOptionsItemSelected(item);
-	}
 }

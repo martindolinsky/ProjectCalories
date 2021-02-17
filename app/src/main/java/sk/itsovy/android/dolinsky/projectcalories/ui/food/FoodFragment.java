@@ -10,14 +10,12 @@ import com.google.android.material.button.MaterialButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import sk.itsovy.android.dolinsky.projectcalories.R;
 
 public class FoodFragment extends Fragment {
 
-	private FoodViewModel mViewModel;
 	private MaterialButton btnBreakfast;
 	private MaterialButton btnBrunch;
 	private MaterialButton btnElevenses;
@@ -32,7 +30,6 @@ public class FoodFragment extends Fragment {
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
-		mViewModel = new ViewModelProvider(this).get(FoodViewModel.class);
 
 		View root = inflater.inflate(R.layout.food_fragment, container, false);
 
@@ -83,11 +80,5 @@ public class FoodFragment extends Fragment {
 		return root;
 	}
 
-//	@Override
-//	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-//		super.onActivityCreated(savedInstanceState);
-//		mViewModel = ViewModelProviders.of(this).get(FoodViewModel.class);
-//		// TODO: Use the ViewModel
-//	}
 
 }

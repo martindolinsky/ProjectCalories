@@ -24,7 +24,6 @@ public class MealsAdapter extends RecyclerView.Adapter<MealsViewHolder> {
 	@Override
 	public MealsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 		LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-//		TODO: change to item meal
 		View itemLayout = inflater.inflate(R.layout.item_meal_layout, parent, false);
 		return new MealsViewHolder(itemLayout);
 	}

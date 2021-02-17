@@ -12,10 +12,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import sk.itsovy.android.dolinsky.projectcalories.R;
-
+import sk.itsovy.android.dolinsky.projectcalories.test.user.UserViewModel;
 
 public class WeightDialogFragment extends Fragment {
-	private WeightDialogVM weightViewModel;
+
+	private UserViewModel userViewModel;
 
 	@Nullable
 	@Override
@@ -29,10 +30,10 @@ public class WeightDialogFragment extends Fragment {
 		picker.setMinValue(20);
 		picker.setWrapSelectorWheel(true);
 
-		weightViewModel = new ViewModelProvider(this).get(WeightDialogVM.class);
+		userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
 		submit.setOnClickListener(v -> {
-			weightViewModel.setWeight(picker.getValue());
+			userViewModel.setWeight(picker.getValue());
 			getActivity().onBackPressed();
 		});
 

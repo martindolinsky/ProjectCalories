@@ -1,6 +1,7 @@
 package sk.itsovy.android.dolinsky.projectcalories.ui.meals;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +27,7 @@ import sk.itsovy.android.dolinsky.projectcalories.test.meal.MealsAdapter;
 
 public class MealsFragment extends Fragment {
 
-	private MealsViewModel mViewModel;
+	private MealViewModel mViewModel;
 	private MaterialButton btnAmount;
 	private CardView cardViewMeal;
 
@@ -38,7 +39,7 @@ public class MealsFragment extends Fragment {
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
 
-		mViewModel = new ViewModelProvider(this).get(MealsViewModel.class);
+		mViewModel = new ViewModelProvider(this).get(MealViewModel.class);
 
 		View root = inflater.inflate(R.layout.meals_fragment, container, false);
 
@@ -59,6 +60,7 @@ public class MealsFragment extends Fragment {
 		});
 
 		btnAmount.setOnClickListener(v -> {
+			Log.d("AMOUNT", "CLICK");
 			showAmountFragment();
 		});
 

@@ -70,7 +70,14 @@
 		android:id="@+id/drinkFragment"
 		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.drink.DrinkFragment"
 		android:label="Drink"
-		tools:layout="@layout/drink_fragment" />
+		tools:layout="@layout/drink_fragment">
+
+		<action
+			android:id="@+id/actionGetAmount"
+			app:destination="@id/amountFragment" />
+
+
+	</fragment>
 
 	<fragment
 		android:id="@+id/mealsFragment"

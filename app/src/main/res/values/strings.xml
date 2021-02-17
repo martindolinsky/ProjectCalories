@@ -22,4 +22,5 @@
 	<string name="drinkTitle">drinkTitle</string>
 	<string name="mealTitle">mealTitle</string>
 	<string name="amount">Type amount in grams</string>
+    <string name="total">Total:</string>
 </resources>

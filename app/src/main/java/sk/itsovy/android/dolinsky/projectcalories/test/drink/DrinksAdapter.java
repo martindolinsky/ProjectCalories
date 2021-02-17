@@ -7,8 +7,10 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import sk.itsovy.android.dolinsky.projectcalories.R;
+import sk.itsovy.android.dolinsky.projectcalories.ui.amount.AmountFragment;
 
 public class DrinksAdapter extends RecyclerView.Adapter<DrinksViewHolder> {
 
@@ -32,6 +34,18 @@ public class DrinksAdapter extends RecyclerView.Adapter<DrinksViewHolder> {
 	@Override
 	public void onBindViewHolder(@NonNull DrinksViewHolder holder, int position) {
 		holder.bind(cachedDrinks.get(position));
+		holder.itemView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				AppCompatActivity activity = (AppCompatActivity) view.getContext();
+				AmountFragment amountFragment = new AmountFragment();
+				activity.getSupportFragmentManager()
+						.beginTransaction()
+						.replace(R.id.recyclerViewDrinkLayout, amountFragment)
+						.addToBackStack(null).commit();
+			}
+		});
+
 	}
 
 	@Override

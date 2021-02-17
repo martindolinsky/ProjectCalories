@@ -1,11 +1,14 @@
-package sk.itsovy.android.dolinsky.projectcalories.test;
+package sk.itsovy.android.dolinsky.projectcalories.test.user;
 
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import sk.itsovy.android.dolinsky.projectcalories.R;
 
 public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
@@ -20,10 +23,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
 	@NonNull
 	@Override
 	public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//		LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-//		View itemLayout = inflater.inflate(R.layout.item_drink_layout, parent, false);
-//		return new UserViewHolder(itemLayout);
-		return null;
+		LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+		View itemLayout = inflater.inflate(R.layout.item_drink_layout, parent, false);
+		return new UserViewHolder(itemLayout);
 	}
 
 	@Override

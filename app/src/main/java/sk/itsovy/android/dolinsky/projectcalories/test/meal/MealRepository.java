@@ -5,7 +5,7 @@ import android.app.Application;
 import java.util.List;
 
 import androidx.lifecycle.LiveData;
-import sk.itsovy.android.dolinsky.projectcalories.test.UserRoomDatabase;
+import sk.itsovy.android.dolinsky.projectcalories.test.user.UserRoomDatabase;
 
 public class MealRepository {
 

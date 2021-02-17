@@ -1,4 +1,4 @@
-package sk.itsovy.android.dolinsky.projectcalories.test;
+package sk.itsovy.android.dolinsky.projectcalories.test.user;
 
 import android.content.Context;
 
@@ -15,8 +15,7 @@ import sk.itsovy.android.dolinsky.projectcalories.test.drink.DrinkDao;
 import sk.itsovy.android.dolinsky.projectcalories.test.meal.Meal;
 import sk.itsovy.android.dolinsky.projectcalories.test.meal.MealDao;
 
-@Database(entities = {User.class, Drink.class, Meal.class}, version = 6, exportSchema = false)
-//@TypeConverters({Converters.class})
+@Database(entities = {User.class, Drink.class, Meal.class}, version = 1, exportSchema = false)
 public abstract class UserRoomDatabase extends RoomDatabase {
 
 	private static volatile UserRoomDatabase INSTANCE;
@@ -43,19 +42,8 @@ public abstract class UserRoomDatabase extends RoomDatabase {
 
 				User u1 = new User();
 				u1.setHeight(180);
+				u1.setWeight(100);
 				userDao.insert(u1);
-
-				User u2 = new User();
-				u1.setHeight(200);
-				userDao.insert(u2);
-
-				User u3 = new User();
-				u1.setHeight(220);
-				userDao.insert(u3);
-
-				User u4 = new User();
-				u1.setHeight(240);
-				userDao.insert(u4);
 
 				DrinkDao drinkDao = INSTANCE.drinkDao();
 				drinkDao.deleteAll();
@@ -142,7 +130,6 @@ public abstract class UserRoomDatabase extends RoomDatabase {
 				m8.setTitle("Salmon Steak");
 				m8.setProteins(240);
 				mealDao.insert(m8);
-
 
 			});
 		}

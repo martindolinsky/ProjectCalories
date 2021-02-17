@@ -1,4 +1,4 @@
-package sk.itsovy.android.dolinsky.projectcalories.test;
+package sk.itsovy.android.dolinsky.projectcalories.test.user;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -16,6 +16,9 @@ public class User {
 
 	@ColumnInfo(name = "weight")
 	private int weight;
+
+	@ColumnInfo(name = "todayTotal")
+	private int todayTotal;
 
 	public User() {
 	}
@@ -42,6 +45,14 @@ public class User {
 
 	public void setWeight(int weight) {
 		this.weight = weight;
+	}
+
+	public int getTodayTotal() {
+		return todayTotal;
+	}
+
+	public void setTodayTotal(int todayTotal) {
+		this.todayTotal = todayTotal;
 	}
 
 	@Override

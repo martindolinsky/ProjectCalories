@@ -20,14 +20,13 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import sk.itsovy.android.dolinsky.projectcalories.R;
-import sk.itsovy.android.dolinsky.projectcalories.test.UserViewHolder;
+import sk.itsovy.android.dolinsky.projectcalories.test.user.UserViewModel;
 
 public class ProfileFragment extends Fragment {
 
 	private static final String TAG = "ProfileFragment";
 
-	private UserViewHolder viewHolder;
-	private ProfileViewModel profileViewModel;
+	private UserViewModel userViewModel;
 	private TextInputEditText editWeight;
 	private TextInputEditText editHeight;
 	private TextInputLayout inputLayoutGoals;
@@ -43,7 +42,7 @@ public class ProfileFragment extends Fragment {
 
 	public View onCreateView(@NonNull LayoutInflater inflater,
 							 ViewGroup container, Bundle savedInstanceState) {
-		profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
+		userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
 		View root = inflater.inflate(R.layout.fragment_profile, container, false);
 
@@ -52,33 +51,16 @@ public class ProfileFragment extends Fragment {
 		inputLayoutGoals = root.findViewById(R.id.textFieldGoals);
 		autoCompleteTextViewGoals = root.findViewById(R.id.textViewGoals);
 
-		goals = new ArrayList<>();
-		goals.add("Lose weight");
-		goals.add("Gain muscles");
-		goals.add("Stay fit");
-
-		arrayAdapter = new ArrayAdapter<>(requireContext(), R.layout.dropdown_menu_item_layout, goals);
-		autoCompleteTextViewGoals.setAdapter(arrayAdapter);
-		autoCompleteTextViewGoals.setThreshold(1);
-
 		showHeightFragment();
-
-		profileViewModel.weight.observe(getViewLifecycleOwner(), integer -> {
-			editWeight.setText(String.valueOf(integer));
-
+		userViewModel.getFirstUser().observe(requireActivity(), user -> {
+			Log.d("OBSERVE HEIGHT2", String.valueOf(user.getHeight()));
+			editHeight.setText(String.valueOf(user.getHeight()));
 		});
 
 		showWeightFragment();
-		profileViewModel.height.observe(getViewLifecycleOwner(), integer -> {
-			editHeight.setText(String.valueOf(integer));
-		});
-
-		//TODO: Fix setting the value
-		profileViewModel.setGoal(autoCompleteTextViewGoals.getText().toString());
-		profileViewModel.goal.observe(getViewLifecycleOwner(), string -> {
-			string = autoCompleteTextViewGoals.getText().toString();
-			Log.d("GOAL", "msg " + string);
-			autoCompleteTextViewGoals.setText(string, false);
+		userViewModel.getFirstUser().observe(requireActivity(), user -> {
+			Log.d("OBSERVE WEIGHT2", String.valueOf(user.getWeight()));
+			editWeight.setText(String.valueOf(user.getWeight()));
 		});
 
 		return root;
@@ -86,7 +68,8 @@ public class ProfileFragment extends Fragment {
 
 	private void showWeightFragment() {
 		editWeight.setOnClickListener(v -> {
-			NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+			NavHostFragment navHostFragment = (NavHostFragment) getActivity()
+					.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
 			NavController navController = navHostFragment.getNavController();
 			navController.navigate(R.id.actionGetWeight);
 		});
@@ -94,7 +77,8 @@ public class ProfileFragment extends Fragment {
 
 	private void showHeightFragment() {
 		editHeight.setOnClickListener(v -> {
-			NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+			NavHostFragment navHostFragment = (NavHostFragment) getActivity()
+					.getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
 			NavController navController = navHostFragment.getNavController();
 			navController.navigate(R.id.actionGetHeight);
 		});
