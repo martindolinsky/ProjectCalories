@@ -35,6 +35,7 @@ public class UserViewModel extends AndroidViewModel {
 	public LiveData<User> getById(int id) {
 		return repository.getById(id);
 	}
+
 	public LiveData<User> getFirstUser() {
 		return repository.getFirstUser();
 	}
@@ -44,9 +45,14 @@ public class UserViewModel extends AndroidViewModel {
 		repository.setTotal(total);
 	}
 
+	public void setTotalDrink(double total) {
+		repository.setTotalDrink(total);
+	}
+
 	public void setHeight(int height) {
 		repository.setHeight(height);
 	}
+
 	public void setWeight(int weight) {
 		repository.setWeight(weight);
 	}

@@ -20,6 +20,9 @@ public class User {
 	@ColumnInfo(name = "todayTotal")
 	private int todayTotal;
 
+	@ColumnInfo(name = "todayTotalDrink")
+	private double todayTotalDrink;
+
 	public User() {
 	}
 
@@ -53,6 +56,14 @@ public class User {
 
 	public void setTodayTotal(int todayTotal) {
 		this.todayTotal = todayTotal;
+	}
+
+	public double getTodayTotalDrink() {
+		return todayTotalDrink;
+	}
+
+	public void setTodayTotalDrink(double todayTotalDrink) {
+		this.todayTotalDrink = todayTotalDrink;
 	}
 
 	@Override

@@ -38,6 +38,9 @@ public interface UserDao {
 	@Query("UPDATE users SET todayTotal = todayTotal + :total")
 	void setTotal(int total);
 
+	@Query("UPDATE users SET todayTotalDrink = todayTotalDrink + :total")
+	void setTotalDrink(double total);
+
 	@Query("UPDATE users SET height = :height")
 	void setHeight(int height);
 

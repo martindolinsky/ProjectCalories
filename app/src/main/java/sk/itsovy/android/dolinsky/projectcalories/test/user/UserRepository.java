@@ -54,6 +54,14 @@ public class UserRepository {
 		);
 	}
 
+	void setTotalDrink(double total) {
+		UserRoomDatabase.databaseWriteExecutor.execute(
+				() -> {
+					userDao.setTotalDrink(total);
+				}
+		);
+	}
+
 	void setHeight(int height) {
 		UserRoomDatabase.databaseWriteExecutor.execute(
 				() -> {

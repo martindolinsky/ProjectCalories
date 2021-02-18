@@ -36,12 +36,6 @@
 
 	</fragment>
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="sk.itsovy.android.dolinsky.projectcalories.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
-
 	<fragment
 		android:id="@+id/heightFragment"
 		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.profile.HeightDialogFragment"
@@ -73,9 +67,8 @@
 		tools:layout="@layout/drink_fragment">
 
 		<action
-			android:id="@+id/actionGetAmount"
-			app:destination="@id/amountFragment" />
-
+			android:id="@+id/actionGetDrinkAmount"
+			app:destination="@id/DrinkAmountFragment" />
 
 	</fragment>
 
@@ -96,5 +89,11 @@
 		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.amount.AmountFragment"
 		android:label="Amount"
 		tools:layout="@layout/amount_fragment" />
+
+	<fragment
+		android:id="@+id/DrinkAmountFragment"
+		android:name="sk.itsovy.android.dolinsky.projectcalories.ui.amount.DrinkAmountFragment"
+		android:label="DrinkAmount"
+		tools:layout="@layout/drink_amount_fragment" />
 
 </navigation>

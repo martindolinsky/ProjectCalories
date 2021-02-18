@@ -32,6 +32,8 @@ public class MealsAdapter extends RecyclerView.Adapter<MealsViewHolder> {
 	@Override
 	public void onBindViewHolder(@NonNull MealsViewHolder holder, int position) {
 		holder.bind(cachedMeals.get(position));
+
+
 	}
 
 	@Override

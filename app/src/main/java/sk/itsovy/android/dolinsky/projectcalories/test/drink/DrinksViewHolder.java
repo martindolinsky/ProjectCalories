@@ -53,6 +53,6 @@ public class DrinksViewHolder extends RecyclerView.ViewHolder {
 				activity.getSupportFragmentManager()
 						.findFragmentById(R.id.nav_host_fragment);
 		NavController navController = navHostFragment.getNavController();
-		navController.navigate(R.id.actionGetAmount);
+		navController.navigate(R.id.actionGetDrinkAmount);
 	}
 }

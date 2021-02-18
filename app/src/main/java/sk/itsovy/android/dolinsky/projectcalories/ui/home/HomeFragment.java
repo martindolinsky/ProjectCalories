@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
 	private MaterialCardView cardViewFood;
 	private MaterialCardView cardViewDrink;
 	private TextView txtTotal;
-
+	private TextView txtTotalDrink;
 
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,8 +46,10 @@ public class HomeFragment extends Fragment {
 		cardViewFood = view.findViewById(R.id.card_view1);
 		cardViewDrink = view.findViewById(R.id.card_view2);
 		txtTotal = view.findViewById(R.id.txtTotal);
+		txtTotalDrink = view.findViewById(R.id.txtTotalDrink);
 
 		txtTotal.setText("Total:");
+		txtTotalDrink.setText("Total:");
 
 		cardViewFood.setOnClickListener(v -> {
 			NavHostFragment navHostFragment = (NavHostFragment) getActivity()
@@ -79,8 +81,8 @@ public class HomeFragment extends Fragment {
 					.findFragmentById(R.id.nav_host_fragment);
 			NavController navController = navHostFragment.getNavController();
 			navController.navigate(R.id.actionGetDrink);
-
 		});
+
 		return view;
 	}
 
@@ -90,13 +92,19 @@ public class HomeFragment extends Fragment {
 		super.onViewCreated(view, savedInstanceState);
 		userViewModel.getFirstUser().observe(requireActivity(), user -> {
 			if (user != null) {
-				txtTotal.setText("Total: " + ((user.getTodayTotal())));
+				txtTotal.setText("Total: " + user.getTodayTotal() + " grams");
 			} else {
 				txtTotal.setText("Total:");
 			}
-
 		});
 
+		userViewModel.getFirstUser().observe(requireActivity(), user -> {
+			if (user != null) {
+				txtTotalDrink.setText("Total: " + user.getTodayTotalDrink() + " liters");
+			} else {
+				txtTotalDrink.setText("Total:");
+			}
+		});
 	}
 
 }
