@@ -23,10 +23,6 @@ public class FoodFragment extends Fragment {
 	private MaterialButton btnSupper;
 	private MaterialButton btnDinner;
 
-	public static FoodFragment newInstance() {
-		return new FoodFragment();
-	}
-
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
@@ -39,7 +35,6 @@ public class FoodFragment extends Fragment {
 		btnLunch = root.findViewById(R.id.btnLunch);
 		btnSupper = root.findViewById(R.id.btnSupper);
 		btnDinner = root.findViewById(R.id.btnDinner);
-
 
 		btnBreakfast.setOnClickListener(v -> {
 			NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);

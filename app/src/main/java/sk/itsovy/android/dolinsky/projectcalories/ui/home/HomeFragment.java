@@ -21,7 +21,6 @@ import sk.itsovy.android.dolinsky.projectcalories.test.user.UserViewModel;
 
 public class HomeFragment extends Fragment {
 
-
 	private UserViewModel userViewModel;
 	private MaterialButton btnAddFood;
 	private MaterialButton btnAddDrink;
@@ -47,6 +46,8 @@ public class HomeFragment extends Fragment {
 		cardViewFood = view.findViewById(R.id.card_view1);
 		cardViewDrink = view.findViewById(R.id.card_view2);
 		txtTotal = view.findViewById(R.id.txtTotal);
+
+		txtTotal.setText("Total:");
 
 		cardViewFood.setOnClickListener(v -> {
 			NavHostFragment navHostFragment = (NavHostFragment) getActivity()
@@ -79,7 +80,6 @@ public class HomeFragment extends Fragment {
 			NavController navController = navHostFragment.getNavController();
 			navController.navigate(R.id.actionGetDrink);
 
-
 		});
 		return view;
 	}
@@ -89,8 +89,14 @@ public class HomeFragment extends Fragment {
 	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 		userViewModel.getFirstUser().observe(requireActivity(), user -> {
-			txtTotal.setText("Total: " + ((user.getTodayTotal())));
+			if (user != null) {
+				txtTotal.setText("Total: " + ((user.getTodayTotal())));
+			} else {
+				txtTotal.setText("Total:");
+			}
+
 		});
+
 	}
 
 }

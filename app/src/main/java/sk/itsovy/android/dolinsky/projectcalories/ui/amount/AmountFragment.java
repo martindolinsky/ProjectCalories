@@ -24,12 +24,6 @@ public class AmountFragment extends Fragment {
 	private TextInputLayout textInputLayout;
 	private TextInputEditText editAmount;
 
-
-	public static AmountFragment newInstance() {
-		return new AmountFragment();
-	}
-
-
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
@@ -46,8 +40,9 @@ public class AmountFragment extends Fragment {
 			btnSave.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View view) {
-					if (Integer.parseInt(editAmount.getText().toString()) > 0 &&
-							Integer.parseInt(editAmount.getText().toString()) <= 9999) {
+					if (!editAmount.getText().toString().equals("")
+							&& Integer.parseInt(editAmount.getText().toString()) > 0
+							&& Integer.parseInt(editAmount.getText().toString()) <= 9999) {
 						int amount;
 						amount = Integer.parseInt(editAmount.getText().toString());
 						userViewModel.setTotal(amount);

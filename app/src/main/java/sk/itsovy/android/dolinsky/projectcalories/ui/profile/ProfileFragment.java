@@ -5,13 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
-
-import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,16 +19,9 @@ import sk.itsovy.android.dolinsky.projectcalories.test.user.UserViewModel;
 
 public class ProfileFragment extends Fragment {
 
-	private static final String TAG = "ProfileFragment";
-
 	private UserViewModel userViewModel;
 	private TextInputEditText editWeight;
 	private TextInputEditText editHeight;
-	private TextInputLayout inputLayoutGoals;
-	private AutoCompleteTextView autoCompleteTextViewGoals;
-	private ArrayList<String> goals;
-	private ArrayAdapter<String> arrayAdapter;
-
 
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,10 +36,9 @@ public class ProfileFragment extends Fragment {
 
 		editWeight = root.findViewById(R.id.textWeight);
 		editHeight = root.findViewById(R.id.textHeight);
-		inputLayoutGoals = root.findViewById(R.id.textFieldGoals);
-		autoCompleteTextViewGoals = root.findViewById(R.id.textViewGoals);
 
 		showHeightFragment();
+
 		userViewModel.getFirstUser().observe(requireActivity(), user -> {
 			Log.d("OBSERVE HEIGHT2", String.valueOf(user.getHeight()));
 			editHeight.setText(String.valueOf(user.getHeight()));

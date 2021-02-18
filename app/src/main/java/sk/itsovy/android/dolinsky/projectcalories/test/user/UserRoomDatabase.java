@@ -38,11 +38,9 @@ public abstract class UserRoomDatabase extends RoomDatabase {
 				// If you want to start with more words, just add them.
 				UserDao userDao = INSTANCE.userDao();
 				//If not here, it creates that number of dbs how many threads exists
-				userDao.deleteAll();
+//				userDao.deleteAll();
 
 				User u1 = new User();
-				u1.setHeight(180);
-				u1.setWeight(100);
 				userDao.insert(u1);
 
 				DrinkDao drinkDao = INSTANCE.drinkDao();

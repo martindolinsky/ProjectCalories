@@ -24,7 +24,6 @@ public class DrinkFragment extends Fragment {
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 	}
 
 	@Override
@@ -47,7 +46,6 @@ public class DrinkFragment extends Fragment {
 				drinksAdapter.setCachedDrinks(drinks);
 			}
 		});
-
 
 		return root;
 	}
