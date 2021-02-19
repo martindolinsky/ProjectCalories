@@ -3,8 +3,8 @@
 	<string name="title_home">Home</string>
 	<string name="title_profile">Profile</string>
 	<string name="title_notifications">Notifications</string>
-	<string name="weight">Enter your weight</string>
-	<string name="height">Enter your height</string>
+	<string name="weight">Enter your weight (kg)</string>
+	<string name="height">Enter your height (cm)</string>
 	<string name="income">Income</string>
 	<string name="drinking_regime">Drinking regime</string>
 	<string name="summary">Summary</string>

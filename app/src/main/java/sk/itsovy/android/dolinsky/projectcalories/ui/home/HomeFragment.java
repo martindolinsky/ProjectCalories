@@ -10,6 +10,9 @@ import android.widget.TextView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -99,8 +102,9 @@ public class HomeFragment extends Fragment {
 		});
 
 		userViewModel.getFirstUser().observe(requireActivity(), user -> {
+			NumberFormat formatter = new DecimalFormat("#0.00");
 			if (user != null) {
-				txtTotalDrink.setText("Total: " + user.getTodayTotalDrink() + " liters");
+				txtTotalDrink.setText("Total: " + formatter.format(user.getTodayTotalDrink()) + " liters");
 			} else {
 				txtTotalDrink.setText("Total:");
 			}
